@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 
 public class Collections {
     public static void main(String[] args) {
+
         HashMap<String, Object> person1 = new HashMap<>();
         person1.put("full_name", "Sagar Mahajan");
         person1.put("email", "sagar@gmail.com");
