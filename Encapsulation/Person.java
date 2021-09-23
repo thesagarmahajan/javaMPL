@@ -1,13 +1,15 @@
 package Encapsulation;
 
+import java.util.HashMap;
+
 public class Person {
 
     private String name, email, phone;
 
-    public Person(String name, String email, String phone) {
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
+    public Person(String newName, String newEmail, String newPhone) {
+        this.name = newName;
+        this.email = newEmail;
+        this.phone = newPhone;
     }
 
     public String getName() {
@@ -32,6 +34,14 @@ public class Person {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public HashMap<String, Object> getPersonData(){
+        HashMap<String, Object> personData = new HashMap<>();
+        personData.put("name", this.name);
+        personData.put("email", this.email);
+        personData.put("phone", this.phone);
+        return personData;
     }
 
 }

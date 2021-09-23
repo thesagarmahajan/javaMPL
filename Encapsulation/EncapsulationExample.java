@@ -11,7 +11,7 @@ public class EncapsulationExample {
         
         ArrayList<Person> people = new ArrayList<>();
 
-        for(int i=1;i<=2;i++){
+        /* for(int i=1;i<=2;i++){
             System.out.println("Enter Name: ");
             String name = sc.nextLine();
     
@@ -25,9 +25,12 @@ public class EncapsulationExample {
     
             Person person = new Person(name, email, phone);
             people.add(person);
-        }
+        } */
 
-        System.out.println(people.get(1).getName());
+        people.add(new Person("Sagar", "sagar@gmail.com", "1231231232"));
+        people.add(new Person("Milind", "milind@gmail.com", "1010101010"));
+
+        System.out.println(people.get(0).getPersonData());
         
         
     }
