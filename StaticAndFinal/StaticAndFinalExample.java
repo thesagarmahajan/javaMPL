@@ -7,7 +7,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 public class StaticAndFinalExample {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        String name;
         // Using className.StaticMemberName syntax to access static members 
         Student.setClgName("IIT Mumbai");
 
@@ -19,17 +19,15 @@ public class StaticAndFinalExample {
         Student st = null;
 
         for(int i=1;i<=n;i++){
-            System.out.println(i);
-            String name = sc.nextLine();
+            System.out.println("Enter Name: ");
+            name = sc.next();
             st = new Student(name);
             divisiona.add(st);
         }
-
-        System.out.println(st.toString());
         
-        // for(int i=0;i<n;i++){
-        //     System.out.println(divisiona.get(i).toString());
-        // }
+        for(int i=0;i<n;i++){
+            System.out.println(divisiona.get(i).toString());
+        }
         
     }
 }
