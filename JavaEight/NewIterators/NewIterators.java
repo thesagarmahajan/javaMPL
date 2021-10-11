@@ -1,4 +1,4 @@
-package JavaEight.ForEach;
+package JavaEight.NewIterators;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.Random;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
-public class ForEachExample {
+public class NewIterators {
     public static void main(String[] args) {
         ArrayList<Integer> nums = new ArrayList<>();
 
