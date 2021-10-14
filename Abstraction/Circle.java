@@ -1,6 +1,6 @@
 package Abstraction;
 
-public class Circle extends Shape implements WheelMovements{
+public class Circle extends Shape implements Wheel{
 
     private float radius;
 
