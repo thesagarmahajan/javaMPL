@@ -1,4 +1,4 @@
-package MultiThreading;
+package MultiThreading.ThreadClass;
 import java.util.ArrayList;
 
 public class ThreadDemo1 extends Thread{
