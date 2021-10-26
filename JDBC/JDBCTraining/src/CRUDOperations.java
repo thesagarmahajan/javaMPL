@@ -11,6 +11,8 @@ public class CRUDOperations {
     private String jdbcPassword = "123123";
     private static final String INSERT_USER_QUERY = "INSERT INTO users(full_name, email, phone) VALUES(?, ?, ?)";
     private static final String GET_ALL_USERS_QUERY = "SELECT * FROM users";
+    private static final String DELETE_USER_QUERY = "DELETE FROM users WHERE id = ?";
+    private static final String UPDATE_USER_QUERY = "UPDATE users SET full_name=?, email=?, phone=? WHERE id=?";
     protected Connection getConnection(){
         Connection con = null;
         try{
@@ -60,5 +62,45 @@ public class CRUDOperations {
 
         }
         return users;
+    }
+
+    /* // Complete by yourself
+    public User getOneUser(int id){
+        return new User();
+    } */
+
+    public boolean deleteUser(int id) throws SQLException{
+        try(Connection con = this.getConnection(); PreparedStatement ps = con.prepareStatement(DELETE_USER_QUERY)){
+            ps.setInt(1, id);
+            boolean isDeleted = ps.executeUpdate() > 0;
+            if(isDeleted){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        catch(SQLException e){
+            return false;
+        }
+    }
+
+    public boolean updateUser(User userToUpdate) throws SQLException{
+        try(Connection con = this.getConnection(); PreparedStatement ps = con.prepareStatement(UPDATE_USER_QUERY)){
+            ps.setString(1, userToUpdate.getFullname());
+            ps.setString(2, userToUpdate.getEmail());
+            ps.setString(3, userToUpdate.getPhone());
+            ps.setInt(4, userToUpdate.getId());
+            boolean isUpdated = ps.executeUpdate() > 0;
+            if(isUpdated){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        catch(SQLException e){
+            return false;
+        }
     }
 }
